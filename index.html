@@ -4,15 +4,57 @@
     <meta charset="UTF-8">
     <title>Country App</title>
     <link rel="stylesheet" href="../src/css/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <h2 style="text-align:center;">Countries</h2>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-box">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="search-input" placeholder="Search for a country...">
+            <button id="clear-search" class="clear-search-btn" title="Clear search">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="search-results-info" class="search-results-info"></div>
+    </div>
 
     <div id="country-container"></div>
 
     <!-- Pagination buttons -->
     <div id="pagination"></div>
+
+    <!-- Modal container -->
+    <div id="country-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="modal-close-btn" class="close-btn">&times;</span>
+                <h2 id="modal-country-name"></h2>
+            </div>
+            <div class="modal-body">
+                <div class="country-flag-container">
+                    <img id="modal-country-flag" src="" alt="Country Flag">
+                </div>
+                <div class="country-details">
+                    <p><strong>Official Name:</strong> <span id="modal-official-name"></span></p>
+                    <p><strong>Capital:</strong> <span id="modal-capital"></span></p>
+                    <p><strong>Currency:</strong> <span id="modal-currency"></span></p>
+                    <p><strong>Longitude:</strong> <span id="modal-longitude"></span></p>
+                    <p><strong>Borders (last 2):</strong> <span id="modal-borders"></span></p>
+                </div>
+                <div id="modal-weather-details" class="weather-details">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-bottom-close-btn" class="close-button">Close</button>
+            </div>
+            
+        </div>
+    </div>
 
     <script type="module" src="../src/js/app.js"></script>
 </body>
